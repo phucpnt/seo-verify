@@ -13,8 +13,8 @@ it('given fake rules, the build rules should work', () => {
 });
 
 it('given fake rules, the build rules should follow order', () => {
-  const rule1 = jest.fn().mockImplementation(next => any => next(any + 'b'));
-  const rule2 = jest.fn().mockImplementation(next => any => next(any + 'c'));
+  const rule1 = jest.fn().mockImplementation(next => any => next(`${any}b`));
+  const rule2 = jest.fn().mockImplementation(next => any => next(`${any}c`));
 
   const checkRules = buildRules(rule1, rule2);
   const result = checkRules('a');
