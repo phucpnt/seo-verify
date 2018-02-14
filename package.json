@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "jest --watch"
   },
   "author": "Phuc PNT. <pn.truongphuc@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "htmlparser2": "^3.9.2",
     "jest": "^22.2.2"
   },
   "devDependencies": {
