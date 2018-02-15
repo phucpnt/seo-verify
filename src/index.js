@@ -17,7 +17,7 @@ const seoVerify = buildRules(
 
 const issues = seoVerify(html);
 if (issues.length === 0) {
-  console.info("no issue found.");
+  console.info("No issue found.");
 } else {
   console.error(issues.join("\n"));
 }
