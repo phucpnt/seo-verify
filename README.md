@@ -23,15 +23,18 @@
   ```
 * A seo rule will need: 
   1) A html tag or [css element element selector](https://www.w3schools.com/cssref/sel_element_element.asp)
-  2) Capture function for catching seo issue  
-  if you just need to validate the tag exits just put a function that return `true`
+  2) A function for catching seo issue  
+  if you just need to validate a html tag exits just put a function that return `true`
   3) A message to print out seo issues on your console.
-* Example for adding new rule:
+* Example for adding new rules:
   ```javascript
   const {seoVerify , defaultRules, rule, countLessThan} = require('seo-verify');
+  const inputHtml = `
+  <!-- your html string -->
+  `;
   seoVerify(defaultRules.concat([
     rule('head meta', countLessThan(1)(attrs => attrs.name = 'robot'), '<meta name="robot" /> not found')
     // more rules...
-  ]))
+  ]), inputHtml)
   ```
 
