@@ -37,7 +37,7 @@ it('should invoke rule with full path of tags', (done) => {
     expect(fakeRule.mock.calls.filter(invokeArgs => invokeArgs[1].charset)
       .length).toEqual(1);
     expect(fakeRule.mock.calls.filter(invokeArgs => JSON.stringify(invokeArgs[0]) === JSON.stringify(['html', 'head', 'title']))
-      .length).toEqual(1);
+      .length).toEqual(2);
     done();
   });
 });

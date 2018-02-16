@@ -8,9 +8,9 @@ const createHandler = (seoRule, callback) => {
       tagPath = tagPath.concat(tagName);
       seoRule([].concat(tagPath), attrs);
     },
-    onclosetag(/* tagName */) {
+    onclosetag(tagName) {
+      seoRule([].concat(tagPath), { endOfSection: tagName === 'html' ? [] : tagPath });
       tagPath = tagPath.slice(0, -1);
-      seoRule([].concat(tagPath), { endOfSection: true });
     },
     onend() {
       callback(null);

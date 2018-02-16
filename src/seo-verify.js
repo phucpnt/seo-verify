@@ -18,7 +18,7 @@ function seoVerfiy(seoRules = [], html) {
     } else if (seoIssues.length === 0) {
       console.info('No issues found.');
     } else {
-      console.info('Found SEO issues: ', seoIssues.join('\n'));
+      console.info(`Found SEO issues: \n${seoIssues.join('\n')}`);
     }
   });
 }

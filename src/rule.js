@@ -1,10 +1,21 @@
-
 // eslint-disable-next-line no-unused-vars
 function rule(htmlTag, catchIssue = attrs => false, warningMsg = '') {
   const tagPath = htmlTag.split(' ');
 
   return next => (issues, iTag, iAttrs) => {
-    if (validTagPath([].concat(iTag), tagPath) && catchIssue(iAttrs)) {
+    if (
+      iAttrs.endOfSection &&
+      catchIssue.matchEndingSection &&
+      catchIssue.matchEndingSection(tagPath, iAttrs.endOfSection) &&
+      catchIssue(iAttrs)
+    ) {
+      return next(issues.concat(warningMsg), iTag, iAttrs);
+    }
+    if (
+      !iAttrs.endOfSection &&
+      validTagPath([].concat(iTag), tagPath) &&
+      catchIssue(iAttrs)
+    ) {
       return next(issues.concat(warningMsg), iTag, iAttrs);
     }
     return next(issues, iTag, iAttrs);
