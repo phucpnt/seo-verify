@@ -29,9 +29,12 @@
 * Example for adding new rules:
   ```javascript
   const {seoVerify , defaultRules, rule, countLessThan} = require('seo-verify');
+  const inputHtml = `
+  <!-- your html string -->
+  `;
   seoVerify(defaultRules.concat([
     rule('head meta', countLessThan(1)(attrs => attrs.name = 'robot'), '<meta name="robot" /> not found')
     // more rules...
-  ]))
+  ]), inputHtml)
   ```
 
