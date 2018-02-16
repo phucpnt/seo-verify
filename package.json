@@ -1,11 +1,12 @@
 {
-  "name": "seo-verifier",
+  "name": "seo-verify",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "dev": "jest --watch"
+    "dev": "jest --watch",
+    "dev:debug": "node --inspect node_modules/.bin/jest --watch"
   },
   "author": "Phuc PNT. <pn.truongphuc@gmail.com>",
   "license": "ISC",
