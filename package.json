@@ -10,7 +10,7 @@
     "dev:debug": "node --inspect node_modules/.bin/jest --watch"
   },
   "author": "Phuc PNT. <pn.truongphuc@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "htmlparser2": "^3.9.2",
     "jest": "^22.2.2",
