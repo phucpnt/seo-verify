@@ -11,7 +11,7 @@
 ## Write your own seo rules
 * By default this library came with basic seo rules as the following snippet:
   ```javascript
-  [
+  seoVerify([
     rule('img', attrs => !attrs.alt, '<img /> missing alt'),
     rule('a', attrs => !attrs.rel, '<a /> missing rel'),
     rule('head meta', countLessThan(1)(attrs => attrs.name === 'description'), '<meta name="description" /> not found'),
@@ -19,7 +19,7 @@
     rule('strong', countMoreThan(15)(() => true), '<strong> use more than 15 times'),
     rule('h1', countMoreThan(1)(() => true), '<h1> use more than 1 time'),
     rule('title', countLessThan(1)(() => true), '<title> not found'),
-  ]
+  ], yourInputHtml);
   ```
 * A seo rule will need: 
   1) A html tag or [css element element selector](https://www.w3schools.com/cssref/sel_element_element.asp)
